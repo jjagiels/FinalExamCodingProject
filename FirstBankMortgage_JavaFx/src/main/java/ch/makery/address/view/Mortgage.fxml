@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MortgageController">
+   <children>
+      <SplitPane dividerPositions="0.6002886002886003" layoutX="153.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
+               <children>
+                  <GridPane layoutX="120.0" layoutY="104.0" prefHeight="253.0" prefWidth="437.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="181.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="225.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="IncomeEntry" GridPane.columnIndex="1" />
+                        <TextField fx:id="ExpensesEntry" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="CreditScoreEntry" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="HouseCostEntry" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Monthly Income" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label text="Monthly Expenses" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label text="Credit Score" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Label text="House Cost" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                     </children>
+                  </GridPane>
+                  <ButtonBar layoutX="265.0" layoutY="308.0" prefHeight="40.0" prefWidth="203.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                    <buttons>
+                      <Button fx:id="CalcMortgage" mnemonicParsing="false" onAction="#CalcMortgage" prefHeight="33.0" prefWidth="193.0" text="Calculate Mortgage" />
+                    </buttons>
+                  </ButtonBar>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="458.0" styleClass="label-header" text="Enter Data" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="106.0" layoutY="381.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton fx:id="FifteenYear" mnemonicParsing="false" styleClass="label-bright" text="15 Year" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <RadioButton fx:id="ThirtyYear" mnemonicParsing="false" styleClass="label-bright" text="30 Year" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label text="Select Term" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
+               <children>
+                  <GridPane layoutX="37.0" layoutY="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Monthly Payment:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label text="Your Interest Rate:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label fx:id="MortgageResult" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label fx:id="InterestRateResult" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="14.0" layoutY="14.0" styleClass="label-header" text="Results" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
